@@ -1,8 +1,26 @@
-# React + Vite
+# Ejercicio React - Frase Simpsons - uso de API 
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Descripcion
 
-Currently, two official plugins are available:
+Se realiza un proyecto de React utililizando una API que deuele frases e imagenes de personajes de los Simpsons
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+
+## Librerias y Framewroks
+
+- [NodeJS 20.11.0](https://nodejs.org/en)
+- [Bootstraps v5.3.2](https://getbootstrap.com/) 
+
+## Clonar y probar el proyecto
+
+- git clone https://github.com/Pabmoy25/frasesSimpsons.git
+
+Luego de clonar, seguir los siguientes pasos en el editor de código:
+
+```
+npm install //para instalar las dependencias
+npm run dev //para comenzar a ejecutar el proyecto en modo desarrollo
+```
+
+## Deploy del Proyecto
+
+- https://reactfrasessimpsonsAPI.netlify.app/

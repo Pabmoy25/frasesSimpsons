@@ -18,7 +18,7 @@ function App() {
   const consultarAPI = async () => {
 
     try {const respuesta = await fetch(
-      "https://thesimpsonsquoteapi.glitch.me/quotes___"
+      "https://thesimpsonsquoteapi.glitch.me/quotes"
     );
     const datos = await respuesta.json();
     console.log(respuesta);
