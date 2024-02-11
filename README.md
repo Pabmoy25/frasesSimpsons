@@ -2,7 +2,7 @@
 
 ## Descripcion
 
-Se realiza un proyecto de React utililizando una API que deuele frases e imagenes de personajes de los Simpsons
+Se realiza un proyecto de React utililizando una API que devuelve frases e imagenes de personajes de los Simpsons
 
 
 ## Librerias y Framewroks
@@ -23,4 +23,4 @@ npm run dev //para comenzar a ejecutar el proyecto en modo desarrollo
 
 ## Deploy del Proyecto
 
-- https://reactfrasessimpsonsAPI.netlify.app/
+- https://reactfrasessimpsonsapi.netlify.app/
