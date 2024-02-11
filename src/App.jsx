@@ -3,10 +3,27 @@ import "./App.css";
 import logosimpson from "./imagenes/logosimpson.png";
 import { Button, Container } from "react-bootstrap";
 import ObtenerFrase from "./componentes/ObtenerFrase";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 function App() {
-  const [frasePersonaje] = useState({})
+  const [frasePersonaje, setFrasePersonaje] = useState({})
+
+  useEffect(() => {
+    consultarAPI();
+  }, []);
+
+  const consultarAPI = async () => {
+    const respuesta = await fetch(
+      "https://thesimpsonsquoteapi.glitch.me/quotes"
+    );
+    const datos = await respuesta.json();
+    console.log(respuesta);
+    console.log(datos);
+    //guardar los datos del api en el state
+    setFrasePersonaje(datos[0])
+    
+    
+  };
 
   return (
     <>
@@ -15,9 +32,11 @@ function App() {
           src={logosimpson}
           alt="logo del los simpsons"
           className="w-50"
-          ></img>
-          <ObtenerFrase frasePersonajeProps={frasePersonaje}></ObtenerFrase>
-          <Button variant="warning">Obtener frase</Button>
+        ></img>
+        <ObtenerFrase frasePersonajeProps={frasePersonaje}></ObtenerFrase>
+        <Button variant="warning" onClick={consultarAPI}>
+          Obtener frase
+        </Button>
       </Container>
     </>
   );
