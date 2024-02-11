@@ -5,23 +5,31 @@ import { Button, Container } from "react-bootstrap";
 import ObtenerFrase from "./componentes/ObtenerFrase";
 import { useEffect, useState } from "react";
 
+
 function App() {
   const [frasePersonaje, setFrasePersonaje] = useState({})
+  const [error, setError] = useState ("")
 
   useEffect(() => {
     consultarAPI();
   }, []);
 
+  
   const consultarAPI = async () => {
-    const respuesta = await fetch(
-      "https://thesimpsonsquoteapi.glitch.me/quotes"
+
+    try {const respuesta = await fetch(
+      "https://thesimpsonsquoteapi.glitch.me/quotes___"
     );
     const datos = await respuesta.json();
     console.log(respuesta);
     console.log(datos);
     //guardar los datos del api en el state
     setFrasePersonaje(datos[0])
-    
+      
+    } catch (error) {
+      setError ("Disculpe, en esta momento no se puede procesar la solicitud, intentalo más tarde")
+          
+    }
     
   };
 
@@ -37,7 +45,8 @@ function App() {
         <Button variant="warning" onClick={consultarAPI}>
           Obtener frase
         </Button>
-      </Container>
+       <h5 className="text-danger">{error}</h5> 
+        </Container>
     </>
   );
 }
